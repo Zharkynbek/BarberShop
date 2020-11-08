@@ -257,13 +257,22 @@ address {
   max-width: 470px;
 }
 
+.price {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/bg-img.png);
+  background-position: top right;
+}
+
 .price-list {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   padding-top: 30px;
   padding-bottom: 30px;
-  height: 240px;
+}
+
+.price-list-wrap {
+  display: flex;
 }
 
 .price-item {
@@ -298,15 +307,52 @@ address {
   margin-top: 30px;
 }
 
-.team-item {
+.social-icons .team-item {
   flex-basis: calc(100% / 3 - 30px);
   text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.social-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.social-icons-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-icons-svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-link:hover {
+  fill: var(--accent-cl);
 }
 
 .team-position {
   font-size: 14px;
   line-height: 1.357;
   color: var(--accent-cl);
+  text-align: center;
+}
+
+.item-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 8px;
 }
 
 .galerie-item {
