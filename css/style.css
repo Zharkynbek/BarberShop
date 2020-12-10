@@ -140,9 +140,17 @@ address {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--black);
-  background-color: transparent;
+  background-color: var(--white);
   border: 1px solid var(--accent-cl);
   border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 250ms linear 300ms, color 250ms easy 250ms;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--accent-cl);
+  color: var(--white);
 }
 
 .menu {
@@ -235,6 +243,7 @@ address {
   width: 60px;
   height: 1px;
   background-color: currentColor;
+  margin-right: 20px;
 }
 
 .flexbox {
@@ -252,10 +261,58 @@ address {
   color: var(--black);
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(25, 28, 38, 0.8);
+  z-index: 100;
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 450px;
+  background-color: #fff;
+  padding: 80px 4px;
+  transition: transform 0.5;
+}
+
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+}
+
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   padding-top: 32px;
   padding-bottom: 32px;
-  background-color: var(--dark-bg);
+  color: white;
+  font-size: 21px;
+  z-index: 55;
 }
 
 .header .logo {
@@ -278,17 +335,37 @@ address {
   align-items: center;
 }
 
-.hero-content {
-  max-width: 470px;
-  padding-bottom: 206px;
-  padding-top: 152px;
-  padding-left: 100px;
-}
-
 .hero .container {
+  position: relative;
   background-image: url(../images/hero-bg.jpg);
   background-repeat: no-repeat;
-  background-position: left 115px center;
+  background-position: left 115px top;
+}
+
+.hero-sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  background-color: #fff;
+  width: 115px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-left: 15px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+}
+
+.hero-sidebar .social {
+  transform: rotate(-90deg) translateX(50%);
+}
+
+.hero-content {
+  max-width: 470px;
+  padding-bottom: 170px;
+  padding-top: 272px;
+  margin-left: 100px;
 }
 
 .price {
@@ -338,6 +415,53 @@ address {
 .price-line {
   flex-grow: 1;
   border-bottom: 1px solid rgba(157, 164, 189, 0.12);
+}
+
+.benefits-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: auto;
+  width: calc(((100% - 30px * 5) / 6 * 4)+30px * 3);
+}
+
+.benefits-item {
+  width: calc((100% - 30px * 1) / 2);
+  padding: 20px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-align: center;
+  color: var(--black);
+  background-color: var(--light-grey);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.benefits-item p {
+  text-align: center;
+}
+
+.benefits-item:nth-child(2n) {
+  margin-right: 0;
+  /* position: relative;
+  top: 30px; 1 sposob */
+  transform: translateY(30px); /* 2 sposob */
+  /*  margin-top: 30px;
+  margin-bottom: 30px; 3 sposob */
+}
+
+.benefits-counter {
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: 0.05em;
+}
+
+.benefits-counter sup {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.375;
+  color: var(--accent-cl);
 }
 
 .team {
@@ -413,12 +537,42 @@ address {
   background-position: left bottom;
 }
 
+.contacts-item {
+  position: relative;
+  padding-left: 40px;
+}
+
 .galerie-item {
   flex-basis: calc(100% / 4 - 30px);
 }
 
 .contacts-item: :not(:last-child) {
   margin-bottom: 20px;
+}
+
+.contacts-item::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.contacts-item:nth-child(1)::before {
+  background-image: url(../images/map-pin.svg);
+}
+
+.contacts-item:nth-child(2)::before {
+  background-image: url(../images/Shape.svg);
+}
+
+.contacts-item:nth-child(3)::before {
+  background-image: url(../images/mail.svg);
 }
 
 .worktime {
