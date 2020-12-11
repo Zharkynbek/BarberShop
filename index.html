@@ -235,7 +235,14 @@
     </section>
     <div class="dark-bg">
         <div class="container flexbox">
-        <section class="section contact-us content-box"><h2 class="title section-title">online anmelden</h2></section>
+        <section class="section contact-us content-box"><h2 class="title section-title">online anmelden</h2>
+        <form class="contact-form" id="contact-form">
+<input type="text" class="form-field" name="user-name" placeholder="Name*" autocomplete="off" pattern="^[a-zA-Z\s]+$" required>
+<input type="tel" class="form-field" name="user-tel" placeholder="Tel*" autocomplete="off" pattern="[0-9]{1,18}" required>
+<textarea class="form-field form-message" name="user-message" cols="30" rows="5" placeholder="Nachricht"></textarea>
+<button type="submit" class="btn">Senden</button>
+        </form>
+        </section>
         <section class="section contacts content-box" id="contacts"><h2 class="title section-title">Contacts</h2>
         <address>
             <ul class="list contacts-list">
