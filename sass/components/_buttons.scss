@@ -1,0 +1,29 @@
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.333;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: $black;
+  background-color: transparent;
+  border: 1px solid $accent-cl;
+  color: $black;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 250ms linear 300ms, color 250ms easy 250ms;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-cl;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: grey;
+    color: grey;
+    border: #ccc;
+  }
+}

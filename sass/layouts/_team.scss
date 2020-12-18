@@ -1,0 +1,15 @@
+.team {
+  background-color: $light-grey;
+}
+
+.team-item {
+  flex-basis: calc(100% / 3 - 30px);
+  text-align: center;
+}
+
+.team-position {
+  font-size: 14px;
+  line-height: 1.357;
+  color: $accent-cl;
+  text-align: center;
+}

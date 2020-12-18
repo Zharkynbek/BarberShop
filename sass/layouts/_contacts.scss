@@ -1,0 +1,46 @@
+.contacts {
+  padding-left: 100px;
+  padding-right: 100px;
+  background-image: url(../../images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom;
+}
+
+.contacts-item {
+  position: relative;
+  padding-left: 40px;
+}
+
+.contacts-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.contacts-item::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.contacts-item:nth-child(1)::before {
+  background-image: url(../../images/map-pin.svg);
+}
+
+.contacts-item:nth-child(2)::before {
+  background-image: url(../../images/Shape.svg);
+}
+
+.contacts-item:nth-child(3)::before {
+  background-image: url(../../images/mail.svg);
+}
+
+.worktime {
+  margin-top: 70px;
+}

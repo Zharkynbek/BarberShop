@@ -1,0 +1,25 @@
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.social-icons-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-icons-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.social-icons-svg {
+  width: 20px;
+  height: 20px;
+}
