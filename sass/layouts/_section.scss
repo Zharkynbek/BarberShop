@@ -5,8 +5,12 @@
 
 .section-title {
   margin-bottom: 20px;
-  font-size: 42px;
+  font-size: 28px;
   line-height: 1.167;
+
+  @include for-size(desktop) {
+    font-size: 42px;
+  }
 }
 
 .section-lable {
