@@ -5,8 +5,12 @@
 
 .footer .container {
   display: flex;
+  flex-wrap: wrap-reverse;
   justify-content: space-between;
   align-items: center;
+
+  @include for-size(tablet) {
+  }
 }
 
 .copyright {
@@ -15,4 +19,8 @@
   line-height: 1.36;
   letter-spacing: 0.2em;
   color: $grey;
+
+  @include for-size(mobile-only) {
+    margin-top: 20px;
+  }
 }

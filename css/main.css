@@ -40,7 +40,7 @@ html {
 ::after,
 ::before {
   box-sizing: inherit;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 body {
@@ -273,14 +273,16 @@ address {
   height: 20px;
 }
 
-.contact-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+@media (min-width: 768px) {
+  .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
 .form-field {
-  width: calc((100% - 30px) / 2);
+  width: 100%;
   background-color: transparent;
   border-top: 0;
   border-left: 0;
@@ -295,6 +297,12 @@ address {
   color: #fff;
   line-height: 1.36;
   outline: none;
+}
+
+@media (min-width: 768px) {
+  .form-field {
+    width: calc((100% - 30px) / 2);
+  }
 }
 
 .form-field::placeholder {
@@ -370,8 +378,22 @@ address {
 }
 
 .section {
-  padding-top: 130px;
-  padding-bottom: 130px;
+  padding-top: 84px;
+  padding-bottom: 84px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
 }
 
 .section-title {
@@ -581,7 +603,7 @@ address {
 .team-item {
   text-align: center;
   width: 100%;
-  max-width: 480px;
+  max-width: 450px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -616,12 +638,17 @@ address {
 }
 
 .contacts {
-  padding-left: 100px;
-  padding-right: 100px;
   background-image: url(../../images/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left bottom;
+}
+
+@media (min-width: 1200px) {
+  .contacts {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 .contacts-item {
@@ -662,6 +689,25 @@ address {
   margin-top: 70px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contacts .section-title {
+    width: 100%;
+  }
+  .address,
+  .worktime {
+    width: calc((100% - 30px) / 2);
+  }
+  .worktime {
+    margin-top: 0;
+  }
+}
+
 .footer {
   padding-top: 56px;
   padding-bottom: 56px;
@@ -669,6 +715,7 @@ address {
 
 .footer .container {
   display: flex;
+  flex-wrap: wrap-reverse;
   justify-content: space-between;
   align-items: center;
 }
@@ -679,6 +726,12 @@ address {
   line-height: 1.36;
   letter-spacing: 0.2em;
   color: #9da4bd;
+}
+
+@media (max-width: 767px) {
+  .copyright {
+    margin-top: 20px;
+  }
 }
 
 .dark-bg {
