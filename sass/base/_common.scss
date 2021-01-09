@@ -30,11 +30,11 @@ p {
   margin-bottom: 20px;
 }
 
-/* img {
+img {
   display: block;
   min-width: 100%;
   height: auto;
-} */
+}
 
 address {
   font-style: normal;
@@ -63,9 +63,13 @@ address {
   }
   @include for-size(tablet) {
     width: 768px;
+    padding-left: 31px;
+    padding-right: 31px;
   }
   @include for-size(desktop) {
     width: 1200px;
+    padding-left: 39px;
+    padding-right: 39px;
   }
 }
 
